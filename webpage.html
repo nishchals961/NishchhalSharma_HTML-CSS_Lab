@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('your_background_image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    .weather-container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <h1>Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter City">
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weatherInfo"></div>
+  </div>
+
+  <script>
+    document.getElementById('cityInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        getWeather();
+      }
+    });
+  
+    function getWeather() {
+      // Replace the following line with your API call to fetch weather information
+      // Example: fetch('YOUR_WEATHER_API_URL').then(response => response.json()).then(data => displayWeather(data));
+      // For simplicity, let's display a placeholder message
+      const weatherInfo = document.getElementById('weatherInfo');
+      weatherInfo.innerHTML = "Temperature: 15°C";
+    }
+  </script>
+</body>
+</html>
